@@ -1,0 +1,31 @@
+@media only screen and (max-width: 800px){
+    .navbar-container ul{
+        position: absolute;
+        top:70px;
+        left:0;
+        /* background: rgb(36, 182, 254); */
+        width:100%;
+    }
+    .navbar-container ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 50px;
+    }
+    .navbar-container ul li a{
+        color: var(--light);
+    }
+} 
+
+@media only screen and (max-width:600px){
+    .row{
+        text-align: center;
+    }
+    .header-column{
+        flex-basis: 100%;
+    }
+}
+
+.navbar{
+    background: rgb(36, 182, 254) !important; 
+}
