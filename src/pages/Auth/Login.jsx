@@ -3,6 +3,7 @@ import "./auth.css";
 import Navbar from "../../components/Navbar/Navbar";
 // import { Link, useHistory, useParams } from 'react-router-dom';
 import Axios from 'axios';
+import { configData } from './config';
 const Login = () => {
   // const history = useHistory();
   const [loginData, setLoginData] = useState({
@@ -13,7 +14,7 @@ const Login = () => {
 const login = async (e) => {
   if(e) e.preventDefault();
   console.log("post", loginData)
-  await Axios.post(`${process.env.REACT_APP_API}/auth/login`, {...loginData})
+  await Axios.post(`${process.env.REACT_APP_API || configData.backendServerUrl}/auth/login`, {...loginData})
   .then(async (resp) => {
     console.log(resp)
       if (resp.status === 200) {
