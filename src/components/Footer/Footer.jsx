@@ -42,7 +42,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/techchak"
+                    href="https://github.com/techchak/techchak-dealership-frontend-app"
                     className="github"
                   >
                     Github
