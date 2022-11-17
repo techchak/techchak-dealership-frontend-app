@@ -1,11 +1,20 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink,   } from "react-router-dom";
 // import { useAuth } from "../../contexts/auth-context";
 
 const Navbar = () => {
+  // const history = useHistory();
   const getActiveStyle = ({ isActive }) => ({
     color: isActive ? "black" : "white",
   });
+//   const logout = async (e) => {
+
+//     if(e) e.preventDefault();
+
+ 
+//     window.location.href = "/"
+    
+// }
 
   // const { isLoggedIn, setIsLoggedIn } = useAuth();
   return (
@@ -48,12 +57,12 @@ const Navbar = () => {
                   alt="navbar-img"
                 />
               </NavLink> */}
-              <Link to="/login"
+              {/* <Link to="/login"
                 className="btn btn-largetext-center" style={{color: 'rgb(36, 182, 254', backgroundColor: '#fff'}}
-               
+               onClick={(e) =>logout(e)}
               >
-              Login Now
-              </Link>
+              Logout
+              </Link> */}
             </li>
           </ul>
         </ul>

@@ -3,8 +3,10 @@ import "./auth.css";
 import Navbar from "../../components/Navbar/Navbar";
 // import { Link, useHistory, useParams } from 'react-router-dom';
 import Axios from 'axios';
+import { configData } from './config';
 const Login = () => {
   // const history = useHistory();
+  const [loading, setLoading] = useState()
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -13,7 +15,8 @@ const Login = () => {
 const login = async (e) => {
   if(e) e.preventDefault();
   console.log("post", loginData)
-  await Axios.post(`${process.env.REACT_APP_API}/auth/login`, {...loginData})
+  setLoading(true);
+  await Axios.post(`${process.env.REACT_APP_API || configData.backendServerUrl}/auth/login`, {...loginData})
   .then(async (resp) => {
     console.log(resp)
       if (resp.status === 200) {
@@ -22,6 +25,7 @@ const login = async (e) => {
         window.location.href = "/product-listing"
    
       }
+      setLoading(false);
     }).catch((err) => {
       console.log(err)
     })
@@ -71,14 +75,29 @@ const login = async (e) => {
               </label>
               <Link to="/password">Forgot your Password?</Link>
             </div> */}
-            <div className=" btn btn-block text-center" style={{backgroundColor: 'rgb(36, 182, 254) '}}>
-              <div
-                className="link-btn"
-                onClick={(e) => login(e)}
-              >
-             Login
-              </div>
-            </div>
+              {
+                  loading &&
+                  <div className=" btn btn-block text-center disabled disabled-lt" style={{backgroundColor: 'rgb(36, 182, 254) '}}>
+                    <div
+                      className="link-btn">
+                      <span className='text-center'>Loading...</span>
+                    </div>
+                  </div>
+                  // <Link to="/" className="btn btn-block lg bg-brand-blue font-matterbold onwhite disabled-lt">
+                  //     <span className='saidatech-loader white sm'></span>
+                  // </Link>
+              }
+            {
+               !loading &&
+                  <div className=" btn btn-block text-center disabled disabled-lt" style={{backgroundColor: 'rgb(36, 182, 254) '}}>
+                    <div
+                      className="link-btn"
+                      onClick={(e) => login(e)}
+                    >
+                    Login
+                    </div>
+                </div>
+              }
           </div>
         </div>
         </form>
