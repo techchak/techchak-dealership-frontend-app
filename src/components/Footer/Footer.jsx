@@ -34,7 +34,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <a
-                    href="https://twitter.com/vaibhav_matere"
+                    href="https://twitter.com/techchak"
                     className="twitter"
                   >
                     Twitter
@@ -42,7 +42,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/vaibhav18matere"
+                    href="https://github.com/techchak"
                     className="github"
                   >
                     Github
@@ -50,7 +50,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/vaibhavmatere/"
+                    href="https://www.linkedin.com/in/techchak/"
                     className="linkedin"
                   >
                     LinkedIn
